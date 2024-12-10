@@ -1,0 +1,40 @@
+<app-adminnavbar></app-adminnavbar>
+<br><br> <br><br>
+<h1 style="text-align: center; color:palevioletred" class="bi-file-earmark-text">&nbsp;ADD EXPENSE</h1>
+<div class="container mt-5 custom-container">
+    <div class="row justify-content-center">
+        <div class="card shadow smaller-card">
+            <div class="card-body">
+                <form (ngSubmit)="addNow()">
+
+                    <div class="mb-3 row">
+                        <label for="policycatagory" class="col-md-3 col-form-label">Choose Category:</label>
+                        <div class="col-md-9">
+                            <div class="input-group">
+                                <input [(ngModel)]="addData.policycatagory" name="policycatagory" id="policycatagory" type="text"
+                                class="form-control" placeholder="Enter category">
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="mb-3 row">
+                        <label for="policyname" class="col-md-3 col-form-label">Add Expense</label>
+                        <div class="col-md-9">
+                            <input [(ngModel)]="addData.policyname" name="policyname" id="policyname" type="text"
+                                class="form-control" placeholder="Enter the Expense">
+                        </div>
+                    </div>
+
+
+                    <div class="mb-3 row justify-content-center">
+                        <button type="submit" class="btn btn-primary btn-block" style="max-width: 200px;">Add
+                            Expense</button>
+                    </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+<br>

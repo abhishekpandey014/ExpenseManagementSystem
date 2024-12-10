@@ -1,0 +1,26 @@
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+  }
+  
+  .table {
+    margin-top: 20px;
+  }
+  
+  .text-danger {
+    color: red !important;
+  }
+  
+  .text-success {
+    color: green !important;
+  }
+  
+  .text-warning {
+    color: orange !important;
+  }
+  
+  .btn-danger {
+    font-size: 0.9rem;
+    padding: 5px 10px;
+  }
+  

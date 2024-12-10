@@ -1,0 +1,92 @@
+<div class="container mt-4">
+  <h1 class="text-center">
+    <i class="bi bi-bank"></i> Expense Management System
+  </h1>
+
+  <div class="mt-4">
+    <form #historyForm="ngForm" (ngSubmit)="addHistory()" novalidate>
+      <div class="row mb-3">
+        <div class="col-md-4">
+          <label for="user" class="form-label">User:*</label>
+          <select
+            id="user"
+            class="form-select"
+            required
+            [(ngModel)]="newEntry.user"
+            name="user"
+            #user="ngModel"
+          >
+            <option value="" disabled>Select User</option>
+            <option *ngFor="let user of users" [value]="user.name">
+              {{ user.name }}
+            </option>
+          </select>
+          <div *ngIf="user.invalid && user.touched" class="text-danger">
+            User is required.
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="startDate" class="form-label">Start Date:*</label>
+          <input
+            type="date"
+            id="startDate"
+            class="form-control"
+            required
+            [(ngModel)]="newEntry.startDate"
+            name="startDate"
+            #startDate="ngModel"
+          />
+          <div *ngIf="startDate.invalid && startDate.touched" class="text-danger">
+            Start Date is required.
+          </div>
+        </div>
+        <div class="col-md-4">
+          <label for="endDate" class="form-label">End Date:*</label>
+          <input
+            type="date"
+            id="endDate"
+            class="form-control"
+            required
+            [(ngModel)]="newEntry.endDate"
+            name="endDate"
+            #endDate="ngModel"
+          />
+          <div *ngIf="endDate.invalid && endDate.touched" class="text-danger">
+            End Date is required.
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center">
+        <button type="submit" class="btn btn-primary" [disabled]="historyForm.invalid">Generate</button>
+      </div>
+    </form>
+  </div>
+
+  <div class="mt-4">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>User</th>
+          <th>Period</th>
+          <th>Total Amount</th>
+          <th>Generated Date</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let entry of entries">
+          <td>{{ entry.user }}</td>
+          <td>{{ entry.period }}</td>
+          <td>{{ entry.totalAmount }}</td>
+          <td>{{ entry.generatedDate }}</td>
+          <td>
+            <button class="btn btn-danger btn-sm" (click)="deleteEntry(entry)">
+              <i class="bi bi-trash"></i>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

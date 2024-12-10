@@ -1,0 +1,22 @@
+.container {
+    max-width: 900px;
+  }
+  
+  table {
+    width: 100%;
+  }
+  
+  thead {
+    background-color: #f8f9fa;
+  }
+  
+  th,
+  td {
+    text-align: center;
+    padding: 10px;
+  }
+  
+  button {
+    cursor: pointer;
+  }
+  

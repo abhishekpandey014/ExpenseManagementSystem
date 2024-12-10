@@ -1,0 +1,57 @@
+<!-- footer -->
+<div class="row justify-content-center mt-5 bg-dark text-light pb-4" id="footer">
+  <div class="col-md-2 mt-4 mb-2">
+    <h5>About Us</h5>
+    <a routerLink="aboutus">History</a><br>
+    <a routerLink="aboutus">Our team</a><br>
+    <a routerLink="aboutus">Brand Guidelines</a><br>
+    <a routerLink="aboutus">Terms & Conditions </a><br>
+
+  </div>
+  <div class="col-md-2 mt-4 mb-2">
+  </div>
+  <div class="col-md-3 mt-4 mb-2">
+    <h4>Write Us</h4>
+    <p>We would love to hear from you..!</p>
+    <form>
+      <div class="input-group">
+        <input type="text" name="text" class="form-control" aria-label="Text input with submit button"
+          placeholder="write something.." #textInput>
+        <button type="submit" class="btn btn-primary" (click)="write(textInput.value)">Submit</button>
+      </div>
+    </form>
+
+    <br>
+    <div class="social-icons">
+      <a href="https://www.facebook.com" target="_blank">
+        <i class="bi bi-facebook text-primary"></i> Facebook
+      </a>
+      <br>
+      <a href="https://www.instagram.com" target="_blank">
+        <i class="bi bi-instagram text-danger"></i> Instagram
+      </a>
+      <br>
+      <a href="https://www.twitter.com" target="_blank">
+        <i class="bi bi-twitter text-info"></i> Twitter
+      </a>
+      <br>
+      <a href="https://www.whatsapp.com" target="_blank">
+        <i class="bi bi-whatsapp text-success"></i> WhatsApp
+      </a>
+    </div>
+
+  </div>
+  <!-- Line -->
+  <div class="col-md-4 pt-3">
+  </div>
+
+
+  <!-- footer-end -->
+</div>
+<!-- copyright -->
+<div class="row text-center text-light ">
+  <div class="col-12 bg-dark pt-3">
+    <p> Copyright &copy;2023 by Expense Management System. All right Reserved.</p>
+  </div>
+  <!-- copyright-end -->
+</div>

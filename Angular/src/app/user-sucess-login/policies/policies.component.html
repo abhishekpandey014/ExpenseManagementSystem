@@ -1,0 +1,110 @@
+<app-navlogin></app-navlogin>
+<br /><br />
+
+<div class="container">
+  <div class="row justify-content-center mb-5 mt-5">
+    <div class="d-flex align-items-center justify-content-center mb-5">
+      <i class="bi bi-file-earmark-text" style="font-size: 48px; color: #008080;"></i>
+      <h2 class="ms-2">Add Expense</h2>
+    </div>
+  </div>
+
+  <!-- Add Expense Form -->
+  <form #expenseForm="ngForm" (ngSubmit)="onSubmit(expenseForm)">
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="user" class="form-label">User*</label>
+        <input
+          type="text"
+          class="form-control"
+          id="user"
+          required
+          [(ngModel)]="expense.user"
+          name="user"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="amount" class="form-label">Amount*</label>
+        <input
+          type="number"
+          class="form-control"
+          id="amount"
+          required
+          [(ngModel)]="expense.amount"
+          name="amount"
+        />
+      </div>
+    </div>
+
+    <div class="row mb-3">
+      <div class="col-md-6">
+        <label for="date" class="form-label">Date*</label>
+        <input
+          type="date"
+          class="form-control"
+          id="date"
+          required
+          [(ngModel)]="expense.date"
+          name="date"
+        />
+      </div>
+      <div class="col-md-6">
+        <label for="category" class="form-label">Category*</label>
+        <input
+          type="text"
+          class="form-control"
+          id="category"
+          required
+          [(ngModel)]="expense.category"
+          name="category"
+        />
+      </div>
+    </div>
+
+    <div class="mb-3">
+      <label for="description" class="form-label">Description*</label>
+      <textarea
+        class="form-control"
+        id="description"
+        rows="3"
+        required
+        [(ngModel)]="expense.description"
+        name="description"
+      ></textarea>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+  </form>
+
+  <!-- Expense List -->
+  <h3 class="text-center my-4">Expense List</h3>
+  <table class="table table-striped">
+    <thead>
+      <tr>
+        <th>User</th>
+        <th>Amount</th>
+        <th>Date</th>
+        <th>Category</th>
+        <th>Description</th>
+        <th>Actions</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let exp of expenseList">
+        <td>{{ exp.user }}</td>
+        <td>{{ exp.amount }}</td>
+        <td>{{ exp.date }}</td>
+        <td>{{ exp.category }}</td>
+        <td>{{ exp.description }}</td>
+        <td>
+          <button
+            class="btn btn-danger btn-sm"
+            (click)="deleteExpense(exp)"
+          >
+            Delete
+          </button>
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
